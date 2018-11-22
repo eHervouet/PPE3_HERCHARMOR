@@ -27,8 +27,8 @@ namespace PPE3_HERCHARMOR
         public string login { get; set; }
         public string pwd { get; set; }
         public int actif { get; set; }
+        public string nomEntier { get { return nomClient.Trim() + " " + prenomClient.Trim(); } }
         public Nullable<System.DateTime> dateNaissance { get; set; }
-    
         public virtual ICollection<emprunt> emprunt { get; set; }
     }
 }

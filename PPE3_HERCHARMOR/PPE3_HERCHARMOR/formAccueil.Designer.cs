@@ -30,32 +30,32 @@
         {
             this.MenuStripAccueil = new System.Windows.Forms.MenuStrip();
             this.TSMItemFichier = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemRecherches = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemComptes = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemComposants = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemQuitter = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemRecherches = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemParGenre = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemParSupport = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemParClient = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemParReference = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemParDateAbonnement = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemComptes = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemValidationCompte = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemVerificationCompte = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemFermetureCompte = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemAjoutCompte = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemComposants = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemGenre = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemFilm = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemSerie = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemSaison = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItemClient = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemGenreAjout = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemGenreModif = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemFilm = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemFilmAjout = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemFilmModif = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemSerie = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemSerieAjout = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemSerieModif = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemSaison = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemSaisonAjout = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemSaisonModif = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItemClient = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemClientAjout = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItemClientModif = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStripAccueil.SuspendLayout();
@@ -82,6 +82,12 @@
             this.TSMItemFichier.Size = new System.Drawing.Size(59, 20);
             this.TSMItemFichier.Text = "Fichiers";
             // 
+            // TSMItemQuitter
+            // 
+            this.TSMItemQuitter.Name = "TSMItemQuitter";
+            this.TSMItemQuitter.Size = new System.Drawing.Size(111, 22);
+            this.TSMItemQuitter.Text = "Quitter";
+            // 
             // TSMItemRecherches
             // 
             this.TSMItemRecherches.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -93,35 +99,6 @@
             this.TSMItemRecherches.Name = "TSMItemRecherches";
             this.TSMItemRecherches.Size = new System.Drawing.Size(79, 20);
             this.TSMItemRecherches.Text = "Recherches";
-            // 
-            // TSMItemComptes
-            // 
-            this.TSMItemComptes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMItemValidationCompte,
-            this.TSMItemVerificationCompte,
-            this.TSMItemFermetureCompte,
-            this.TSMItemAjoutCompte});
-            this.TSMItemComptes.Name = "TSMItemComptes";
-            this.TSMItemComptes.Size = new System.Drawing.Size(67, 20);
-            this.TSMItemComptes.Text = "Comptes";
-            // 
-            // TSMItemComposants
-            // 
-            this.TSMItemComposants.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMItemGenre,
-            this.TSMItemFilm,
-            this.TSMItemSerie,
-            this.TSMItemSaison,
-            this.TSMItemClient});
-            this.TSMItemComposants.Name = "TSMItemComposants";
-            this.TSMItemComposants.Size = new System.Drawing.Size(86, 20);
-            this.TSMItemComposants.Text = "Composants";
-            // 
-            // TSMItemQuitter
-            // 
-            this.TSMItemQuitter.Name = "TSMItemQuitter";
-            this.TSMItemQuitter.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemQuitter.Text = "Quitter";
             // 
             // TSMItemParGenre
             // 
@@ -153,11 +130,23 @@
             this.TSMItemParDateAbonnement.Size = new System.Drawing.Size(192, 22);
             this.TSMItemParDateAbonnement.Text = "Par date abonnement";
             // 
+            // TSMItemComptes
+            // 
+            this.TSMItemComptes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMItemValidationCompte,
+            this.TSMItemVerificationCompte,
+            this.TSMItemFermetureCompte,
+            this.TSMItemAjoutCompte});
+            this.TSMItemComptes.Name = "TSMItemComptes";
+            this.TSMItemComptes.Size = new System.Drawing.Size(67, 20);
+            this.TSMItemComptes.Text = "Comptes";
+            // 
             // TSMItemValidationCompte
             // 
             this.TSMItemValidationCompte.Name = "TSMItemValidationCompte";
             this.TSMItemValidationCompte.Size = new System.Drawing.Size(205, 22);
             this.TSMItemValidationCompte.Text = "Validation d\'un compte";
+            this.TSMItemValidationCompte.Click += new System.EventHandler(this.TSMItemValidationCompte_Click);
             // 
             // TSMItemVerificationCompte
             // 
@@ -177,14 +166,38 @@
             this.TSMItemAjoutCompte.Size = new System.Drawing.Size(205, 22);
             this.TSMItemAjoutCompte.Text = "Ajout d\'un compte";
             // 
+            // TSMItemComposants
+            // 
+            this.TSMItemComposants.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMItemGenre,
+            this.TSMItemFilm,
+            this.TSMItemSerie,
+            this.TSMItemSaison,
+            this.TSMItemClient});
+            this.TSMItemComposants.Name = "TSMItemComposants";
+            this.TSMItemComposants.Size = new System.Drawing.Size(86, 20);
+            this.TSMItemComposants.Text = "Composants";
+            // 
             // TSMItemGenre
             // 
             this.TSMItemGenre.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMItemGenreAjout,
             this.TSMItemGenreModif});
             this.TSMItemGenre.Name = "TSMItemGenre";
-            this.TSMItemGenre.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemGenre.Size = new System.Drawing.Size(108, 22);
             this.TSMItemGenre.Text = "Genre";
+            // 
+            // TSMItemGenreAjout
+            // 
+            this.TSMItemGenreAjout.Name = "TSMItemGenreAjout";
+            this.TSMItemGenreAjout.Size = new System.Drawing.Size(142, 22);
+            this.TSMItemGenreAjout.Text = "Ajout";
+            // 
+            // TSMItemGenreModif
+            // 
+            this.TSMItemGenreModif.Name = "TSMItemGenreModif";
+            this.TSMItemGenreModif.Size = new System.Drawing.Size(142, 22);
+            this.TSMItemGenreModif.Text = "Modification";
             // 
             // TSMItemFilm
             // 
@@ -192,8 +205,20 @@
             this.TSMItemFilmAjout,
             this.TSMItemFilmModif});
             this.TSMItemFilm.Name = "TSMItemFilm";
-            this.TSMItemFilm.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemFilm.Size = new System.Drawing.Size(108, 22);
             this.TSMItemFilm.Text = "Film";
+            // 
+            // TSMItemFilmAjout
+            // 
+            this.TSMItemFilmAjout.Name = "TSMItemFilmAjout";
+            this.TSMItemFilmAjout.Size = new System.Drawing.Size(146, 22);
+            this.TSMItemFilmAjout.Text = "Ajout";
+            // 
+            // TSMItemFilmModif
+            // 
+            this.TSMItemFilmModif.Name = "TSMItemFilmModif";
+            this.TSMItemFilmModif.Size = new System.Drawing.Size(146, 22);
+            this.TSMItemFilmModif.Text = "Modificartion";
             // 
             // TSMItemSerie
             // 
@@ -201,8 +226,20 @@
             this.TSMItemSerieAjout,
             this.TSMItemSerieModif});
             this.TSMItemSerie.Name = "TSMItemSerie";
-            this.TSMItemSerie.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemSerie.Size = new System.Drawing.Size(108, 22);
             this.TSMItemSerie.Text = "Série";
+            // 
+            // TSMItemSerieAjout
+            // 
+            this.TSMItemSerieAjout.Name = "TSMItemSerieAjout";
+            this.TSMItemSerieAjout.Size = new System.Drawing.Size(142, 22);
+            this.TSMItemSerieAjout.Text = "Ajout";
+            // 
+            // TSMItemSerieModif
+            // 
+            this.TSMItemSerieModif.Name = "TSMItemSerieModif";
+            this.TSMItemSerieModif.Size = new System.Drawing.Size(142, 22);
+            this.TSMItemSerieModif.Text = "Modification";
             // 
             // TSMItemSaison
             // 
@@ -210,8 +247,20 @@
             this.TSMItemSaisonAjout,
             this.TSMItemSaisonModif});
             this.TSMItemSaison.Name = "TSMItemSaison";
-            this.TSMItemSaison.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemSaison.Size = new System.Drawing.Size(108, 22);
             this.TSMItemSaison.Text = "Saison";
+            // 
+            // TSMItemSaisonAjout
+            // 
+            this.TSMItemSaisonAjout.Name = "TSMItemSaisonAjout";
+            this.TSMItemSaisonAjout.Size = new System.Drawing.Size(142, 22);
+            this.TSMItemSaisonAjout.Text = "Ajout";
+            // 
+            // TSMItemSaisonModif
+            // 
+            this.TSMItemSaisonModif.Name = "TSMItemSaisonModif";
+            this.TSMItemSaisonModif.Size = new System.Drawing.Size(142, 22);
+            this.TSMItemSaisonModif.Text = "Modification";
             // 
             // TSMItemClient
             // 
@@ -219,67 +268,19 @@
             this.TSMItemClientAjout,
             this.TSMItemClientModif});
             this.TSMItemClient.Name = "TSMItemClient";
-            this.TSMItemClient.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemClient.Size = new System.Drawing.Size(108, 22);
             this.TSMItemClient.Text = "Client";
-            // 
-            // TSMItemGenreAjout
-            // 
-            this.TSMItemGenreAjout.Name = "TSMItemGenreAjout";
-            this.TSMItemGenreAjout.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemGenreAjout.Text = "Ajout";
-            // 
-            // TSMItemGenreModif
-            // 
-            this.TSMItemGenreModif.Name = "TSMItemGenreModif";
-            this.TSMItemGenreModif.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemGenreModif.Text = "Modification";
-            // 
-            // TSMItemFilmAjout
-            // 
-            this.TSMItemFilmAjout.Name = "TSMItemFilmAjout";
-            this.TSMItemFilmAjout.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemFilmAjout.Text = "Ajout";
-            // 
-            // TSMItemFilmModif
-            // 
-            this.TSMItemFilmModif.Name = "TSMItemFilmModif";
-            this.TSMItemFilmModif.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemFilmModif.Text = "Modificartion";
-            // 
-            // TSMItemSerieAjout
-            // 
-            this.TSMItemSerieAjout.Name = "TSMItemSerieAjout";
-            this.TSMItemSerieAjout.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemSerieAjout.Text = "Ajout";
-            // 
-            // TSMItemSerieModif
-            // 
-            this.TSMItemSerieModif.Name = "TSMItemSerieModif";
-            this.TSMItemSerieModif.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemSerieModif.Text = "Modification";
-            // 
-            // TSMItemSaisonAjout
-            // 
-            this.TSMItemSaisonAjout.Name = "TSMItemSaisonAjout";
-            this.TSMItemSaisonAjout.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemSaisonAjout.Text = "Ajout";
-            // 
-            // TSMItemSaisonModif
-            // 
-            this.TSMItemSaisonModif.Name = "TSMItemSaisonModif";
-            this.TSMItemSaisonModif.Size = new System.Drawing.Size(180, 22);
-            this.TSMItemSaisonModif.Text = "Modification";
             // 
             // TSMItemClientAjout
             // 
             this.TSMItemClientAjout.Name = "TSMItemClientAjout";
-            this.TSMItemClientAjout.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemClientAjout.Size = new System.Drawing.Size(142, 22);
             this.TSMItemClientAjout.Text = "Ajout";
             // 
             // TSMItemClientModif
             // 
             this.TSMItemClientModif.Name = "TSMItemClientModif";
-            this.TSMItemClientModif.Size = new System.Drawing.Size(180, 22);
+            this.TSMItemClientModif.Size = new System.Drawing.Size(142, 22);
             this.TSMItemClientModif.Text = "Modification";
             // 
             // formAccueil
