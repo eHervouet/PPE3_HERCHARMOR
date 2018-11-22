@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PPE3_HERCHARMOR
 {
-    public partial class Form1 : Form
+    public partial class formAccueil : Form
     {
-        public Form1()
+        public formAccueil()
         {
             InitializeComponent();
+        }
+
+        private void formAccueil_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
