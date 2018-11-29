@@ -85,8 +85,9 @@
             // TSMItemQuitter
             // 
             this.TSMItemQuitter.Name = "TSMItemQuitter";
-            this.TSMItemQuitter.Size = new System.Drawing.Size(111, 22);
+            this.TSMItemQuitter.Size = new System.Drawing.Size(180, 22);
             this.TSMItemQuitter.Text = "Quitter";
+            this.TSMItemQuitter.Click += new System.EventHandler(this.TSMItemQuitter_Click);
             // 
             // TSMItemRecherches
             // 

@@ -35,5 +35,16 @@ namespace PPE3_HERCHARMOR
         {
             return maConnexion.client.ToList();
         }
+
+        private void TSMItemQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void validerCompte(client unClient)
+        {
+            maConnexion.client.Find(unClient.idClient).actif = 1;
+            maConnexion.SaveChanges();
+        }
     }
 }
