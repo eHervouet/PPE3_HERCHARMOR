@@ -72,6 +72,12 @@
     <Compile Include="formAccueil.Designer.cs">
       <DependentUpon>formAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSuppressionCompte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionCompte.Designer.cs">
+      <DependentUpon>FormSuppressionCompte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormValidationCompte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="formAccueil.resx">
       <DependentUpon>formAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionCompte.resx">
+      <DependentUpon>FormSuppressionCompte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormValidationCompte.resx">
       <DependentUpon>FormValidationCompte.cs</DependentUpon>

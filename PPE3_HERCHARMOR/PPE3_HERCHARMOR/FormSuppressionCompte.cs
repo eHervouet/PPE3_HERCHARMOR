@@ -10,48 +10,46 @@ using System.Windows.Forms;
 
 namespace PPE3_HERCHARMOR
 {
-    public partial class FormValidationCompte : Form
+    public partial class FormFermetureCompte : Form
     {
         formAccueil accueil = new formAccueil();
-
-        public FormValidationCompte(List<client> uneListe)
+        public FormFermetureCompte(List<client> uneListe)
         {
             InitializeComponent();
             bsClient.DataSource = uneListe;
-            cbCompteNonValide.ValueMember = "idClient";
-            cbCompteNonValide.DisplayMember = "nomEntier";
-            cbCompteNonValide.DataSource = bsClient;
-            cbCompteNonValide.SelectedIndex = -1;
+            cbFermetureCompte.ValueMember = "idClient";
+            cbFermetureCompte.DisplayMember = "nomEntier";
+            cbFermetureCompte.DataSource = bsClient;
+            cbFermetureCompte.SelectedIndex = -1;
         }
 
-        private void FormValidationCompte_Load(object sender, EventArgs e)
+        private void FormSuppressionCompte_Load(object sender, EventArgs e)
         {
             lblNomClient.Text = "";
-            lblPrenomClient.Text = "";            
+            lblPrenomClient.Text = "";
             lblEmailClient.Text = "";
             lblDateNaissanceClient.Text = "";
             lblDateAboClient.Text = "";
             lblLoginClient.Text = "";
             lblMDPClient.Text = "";
             lblActifClient.Text = "";
-            btnValidation.Visible = false;
+            btnFermerCompte.Visible = false;
         }
 
-        private void cbCompteNonValide_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbCompteSuppression_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int choix = cbCompteNonValide.SelectedIndex;
+            int choix = cbFermetureCompte.SelectedIndex;
 
             List<client> listeClient = accueil.listeDesclient();
 
-            if(choix != -1)
+            if (choix != -1)
             {
                 changeInformation(listeClient[choix]);
-            }     
+            }
         }
-
         public void changeInformation(client unClient)
         {
-            btnValidation.Visible = false;
+            btnFermerCompte.Visible = true;
             lblNomClient.Text = unClient.nomClient;
             lblPrenomClient.Text = unClient.prenomClient;
             lblEmailClient.Text = unClient.emailClient;
@@ -62,29 +60,29 @@ namespace PPE3_HERCHARMOR
             if (unClient.actif == 0)
             {
                 lblActifClient.Text = "Non actif";
-                btnValidation.Visible = true;
             }
             else
-            if (unClient.actif == 1)
+            if(unClient.actif == 1)
             {
                 lblActifClient.Text = "Compte actif";
             }
             else
             {
                 lblActifClient.Text = "Le compte est fermer";
-                btnValidation.Visible = true;
+                btnFermerCompte.Visible = false;
             }
+
         }
 
-        private void btnValidation_Click(object sender, EventArgs e)
+        private void btnFermerCompte_Click(object sender, EventArgs e)
         {
-            int compteValider = cbCompteNonValide.SelectedIndex;
+            int compteFermer = cbFermetureCompte.SelectedIndex;
 
             List<client> listeClient = accueil.listeDesclient();
 
-            accueil.validerCompte(listeClient[compteValider]);
+            accueil.fermerCompte(listeClient[compteFermer]);
 
-            btnValidation.Visible = false;
+            btnFermerCompte.Visible = false;
             this.Close();
         }
     }

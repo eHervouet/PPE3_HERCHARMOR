@@ -30,7 +30,6 @@ namespace PPE3_HERCHARMOR
             FormValidationCompte ValidationCompte = new FormValidationCompte(listeDesclient());
             ValidationCompte.Show();
         }
-
         public List<client> listeDesclient()
         {
             return maConnexion.client.ToList();
@@ -45,6 +44,17 @@ namespace PPE3_HERCHARMOR
         {
             maConnexion.client.Find(unClient.idClient).actif = 1;
             maConnexion.SaveChanges();
+        }
+        public void fermerCompte(client unClient)
+        {
+            maConnexion.client.Find(unClient.idClient).actif = 2;
+            maConnexion.SaveChanges();
+        }
+
+        private void TSMItemFermetureCompte_Click_1(object sender, EventArgs e)
+        {
+            FormFermetureCompte FermetureCompte = new FormFermetureCompte(listeDesclient());
+            FermetureCompte.Show();
         }
     }
 }

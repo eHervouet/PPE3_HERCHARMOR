@@ -160,6 +160,7 @@
             this.TSMItemFermetureCompte.Name = "TSMItemFermetureCompte";
             this.TSMItemFermetureCompte.Size = new System.Drawing.Size(205, 22);
             this.TSMItemFermetureCompte.Text = "Fermeture d\'un compte";
+            this.TSMItemFermetureCompte.Click += new System.EventHandler(this.TSMItemFermetureCompte_Click_1);
             // 
             // TSMItemAjoutCompte
             // 
