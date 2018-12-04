@@ -56,5 +56,33 @@ namespace PPE3_HERCHARMOR
             FormFermetureCompte FermetureCompte = new FormFermetureCompte(listeDesclient());
             FermetureCompte.Show();
         }
+
+        private void TSMItemAjoutCompte_Click(object sender, EventArgs e)
+        {
+            FormAjoutCompte AjoutCompte = new FormAjoutCompte();
+            AjoutCompte.Show();
+        }
+
+        public void ajouterCompte(string unNomClient, string unPrenomClient, string unLoginClient, string unMDPClient, string unEmailClient, DateTime uneDateAboClient, DateTime uneDateNaissanceClient, int unNumEtatClient)
+        {
+            client monClient = new client();
+            monClient.nomClient = unNomClient;
+            monClient.prenomClient = unPrenomClient;
+            monClient.emailClient = unEmailClient;
+            monClient.login = unLoginClient;
+            monClient.pwd = unMDPClient;
+            monClient.dateNaissance = uneDateNaissanceClient;
+            monClient.dateAbonnementClient = uneDateAboClient;
+            monClient.actif = unNumEtatClient;
+
+            maConnexion.client.Add(monClient);
+            maConnexion.SaveChanges();
+        }
+
+        private void TSMItemVerificationCompte_Click(object sender, EventArgs e)
+        {
+            FormVerifCompte VerifCompte = new FormVerifCompte(listeDesclient());
+            VerifCompte.Show();
+        }
     }
 }
